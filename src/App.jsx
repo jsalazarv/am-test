@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.scss';
+import axios from 'axios';
+import config from './config';
 
 function App() {
+  axios.get(`${config.api.host}/hp-characters`)
   return (
     <div className="App">
       <header className="App-header">
