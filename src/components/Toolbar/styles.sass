@@ -18,6 +18,33 @@
       border-top-right-radius: 12px
     .icon
       margin-left: 6px
+  .favorite-list
+    position: absolute
+    bottom: 0
+    background: #6B63B5
+    width: 90%
+    padding: 15px 0 25px 0
+    z-index: -1
+    color: white
+    list-style: none
+    display: none
+    &.open
+      display: block
+    li
+      padding: 15px 20px
+      border-bottom: 1px solid #5A5581
+      display: flex
+      align-items: center
+      justify-content: space-between
+      span
+        display: flex
+        align-items: center
+    &-avatar
+      width: 35px
+      height: 35px
+      border-radius: 50%
+      margin-right: 10px
+
 
 
 //@media (min-width: 576px)
@@ -39,6 +66,10 @@
       &:hover
         cursor: pointer
         background-color: #5A5581
+    .favorite-list
+      bottom: initial
+      width: 244px
+      padding: 15px 0 0 0
 
 @media (min-width: 1200px)
   .toolbar

@@ -3,12 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import {faBookmark as faBookmarkSolid} from '@fortawesome/free-solid-svg-icons';
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {addCharacterToFavorites, removeCharacterFromFavorites} from "../../redux/characters/actions";
 
 const CharacterCard = (props) => {
     const {character, onFavoriteClick = () => null} = props;
+    const dispatch = useDispatch();
+    const favorites = useSelector((state) => state.characterState.favorites);
     const aliveStatus = character.alive ? "VIVO" : "MUERTO";
     const category = character.hogwartsStaff ? "STAFF" : "ESTUDIANTE";
-    const [favoriteIcon, setFavoriteIcon] = useState(faBookmark); //todo: change favorite icon if user is in favorite array list
+    const [favoriteIcon, setFavoriteIcon] = useState(faBookmark);
     const houseClassColor = {
         Gryffindor: "gryffindor",
         Slytherin: "slytherin",
@@ -17,7 +21,16 @@ const CharacterCard = (props) => {
     };
 
     const favoriteClickHandler = () => {
-        setFavoriteIcon(faBookmarkSolid);
+
+        if(favorites.includes(character)) {
+            setFavoriteIcon(faBookmark);
+            dispatch(removeCharacterFromFavorites(character));
+        } else {
+            if(favorites.length < 5) {
+                setFavoriteIcon(faBookmarkSolid);
+                dispatch(addCharacterToFavorites(character));
+            }
+        }
         onFavoriteClick(character);
     };
 
