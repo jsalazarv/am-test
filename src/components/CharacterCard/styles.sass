@@ -1,0 +1,105 @@
+.character-card
+  background-color: white
+  border-radius: 10px
+  color: #081F32
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  width: calc(50% - 7px)
+  &-header
+    background: gray
+    padding: 10px
+    text-align: center
+    &.gryffindor
+      background: rgb(255,1,1)
+      background: linear-gradient(90deg, rgba(255,1,1,1) 0%, rgba(254,212,130,1) 100%)
+    &.slytherin
+      background: rgb(31,124,44)
+      background: linear-gradient(135deg, rgba(31,124,44,1) 0%, rgba(127,230,93,1) 100%)
+    &.hufflepuff
+      background: rgb(255,201,5)
+      background: linear-gradient(159deg, rgba(255,201,5,1) 0%, rgba(255,240,126,1) 100%)
+    &.ravenclaw
+      background: rgb(10,153,186)
+      background: linear-gradient(159deg, rgba(10,153,186,1) 0%, rgba(95,205,250,1) 100%)
+    &-avatar
+      border-radius: 50%
+      height: 80px
+      width: 80px
+  &-body
+    padding: 10px
+    &.bg-dead
+      background-color: #CCCCCC
+    &-title
+      text-align: center
+    &-info
+      display: none
+      line-height: 8px
+    &-additional-info
+      display: flex
+      align-items: center
+      color: #8C8C8C
+      .col
+        width: 50%
+        &.info
+          display: flex
+          flex-direction: column
+        &.favorite
+          text-align: right
+          color: #081F32
+
+
+
+
+
+
+
+//@media (min-width: 576px)
+@media (min-width: 768px)
+  .character-card
+    width: calc(50% - 10px)
+
+@media (min-width: 992px)
+  .character-card
+    flex-direction: row
+    &-header
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 40%
+      &-avatar
+        height: 150px
+        width: 150px
+    &-body
+      padding: 20px
+      flex: 1
+      display: flex
+      flex-direction: column
+      &-title
+        text-align: left
+        font-size: 24px
+        font-weight: 500
+        order: 2
+        margin: 10px 0
+      &-info
+        display: block
+        order: 3
+      &-additional-info
+        order: 1
+        .col
+          &.info
+            flex-direction: row
+            & span
+              &:after
+                content: "/"
+                margin: 4px
+              &:last-child
+                &:after
+                  content: ""
+
+
+@media (min-width: 1200px)
+  .character-card
+    width: calc(50% - 25px)
+
+

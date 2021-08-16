@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.sass';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from "react-redux";
+import store from "./redux";
+import {ModalProvider} from "react-simple-hook-modal";
+import 'react-simple-hook-modal/dist/styles.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+        <ModalProvider>
+            <App />
+        </ModalProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

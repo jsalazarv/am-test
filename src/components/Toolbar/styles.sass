@@ -1,0 +1,79 @@
+.toolbar
+  position: fixed
+  bottom: 0
+  display: flex
+  justify-content: center
+  height: max-content
+  width: 100%
+  left: 0
+  &-button
+    background-color: #6B63B5
+    border: 1px solid #5A5581
+    color: #ffffff
+    height: 40px
+    width: 45%
+    &:first-child
+      border-top-left-radius: 12px
+    &:last-child
+      border-top-right-radius: 12px
+    .icon
+      margin-left: 6px
+  .favorite-list
+    position: absolute
+    bottom: 0
+    background: #6B63B5
+    width: 90%
+    padding: 15px 0 25px 0
+    z-index: -1
+    color: white
+    list-style: none
+    display: none
+    &.open
+      display: block
+    li
+      padding: 15px 20px
+      border-bottom: 1px solid #5A5581
+      display: flex
+      align-items: center
+      justify-content: space-between
+      span
+        display: flex
+        align-items: center
+    &-avatar
+      width: 35px
+      height: 35px
+      border-radius: 50%
+      margin-right: 10px
+
+
+
+//@media (min-width: 576px)
+//@media (min-width: 768px)
+@media (min-width: 992px)
+  .toolbar
+    top: 0
+    justify-content: flex-end
+    right: 30%
+    &-button
+      width: max-content
+      padding: 0 15px
+      &:first-child
+        border-top-left-radius: initial
+        border-bottom-left-radius: 12px
+      &:last-child
+        border-top-right-radius: initial
+        border-bottom-right-radius: 12px
+      &:hover
+        cursor: pointer
+        background-color: #5A5581
+    .favorite-list
+      bottom: initial
+      width: 244px
+      padding: 15px 0 0 0
+
+@media (min-width: 1200px)
+  .toolbar
+    top: 0
+    justify-content: flex-end
+    right: 40%
+

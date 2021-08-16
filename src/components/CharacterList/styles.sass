@@ -1,0 +1,49 @@
+.container-character-list
+  display: flex
+  width: 100%
+  grid-gap: 10px
+  gap: 10px
+  flex-wrap: wrap
+.container-title
+  color: white
+  text-align: center
+.filters-container
+  width: 100%
+  text-align: center
+  display: flex
+  justify-content: center
+  gap: 10px
+  margin: 40px 0
+  padding: 0 10px
+  .filter-button
+    min-width: 50%
+    height: 50px
+    background-color: rgba(0, 0, 0, 0.5)
+    color: white
+    border: 4px solid #6B63B5
+    &:hover
+      background-color: #9C97C9
+    &.active
+      background-color: #6B63B5
+
+//@media (min-width: 576px)
+@media (min-width: 768px)
+  .container-character-list
+    grid-gap: 20px
+    gap: 20px
+
+@media (min-width: 992px)
+  .container-character-list
+    max-width: 900px
+    margin: auto
+  .filters-container
+    gap: 80px
+    .filter-button
+      height: 70px
+      min-width: 250px
+
+@media (min-width: 1200px)
+  .container-character-list
+    max-width: 1000px
+    grid-gap: 50px
+    gap: 50px

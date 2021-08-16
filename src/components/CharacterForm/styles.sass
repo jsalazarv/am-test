@@ -1,0 +1,54 @@
+.character-form
+  display: flex
+  width: 100%
+  grid-gap: 10px
+  gap: 10px
+  flex-wrap: wrap
+  .error
+    border: 1px solid red
+    color: red
+    &.no-outline
+      border: none
+  .form-group
+    width: calc(100% - 7px)
+    display: flex
+    flex-direction: column
+    color: #263238
+    .text-input
+      background-color: #F2F3F3
+      border-bottom: 1px solid gray
+      height: 80px
+      font-size: 18px
+      padding: 0 15px
+      border-radius: 5px 5px 0 0
+      margin: 8px 0 10px 0
+      width: 100%
+    .radio-input
+      display: inline-flex
+      justify-content: space-between
+      margin: 15px 0
+    .image-input
+      opacity: 0
+  .button-container
+    width: 100%
+    text-align: center
+    .button-save
+      background-color: #666666
+      color: white
+      height: 80px
+      width: 100%
+      border: 5px solid #6B63B5
+
+
+//@media (min-width: 576px)
+//@media (min-width: 768px)
+@media (min-width: 992px)
+  .character-form
+    .form-group
+      width: calc(50% - 7px)
+    .button-container
+      .button-save
+        height: 80px
+        width: 300px
+
+//@media (min-width: 1200px)
