@@ -1,26 +1,10 @@
-import logo from './logo.svg';
 import './App.scss';
-import axios from 'axios';
-import config from './config';
+import CharacterList from "./components/CharacterList";
 
 function App() {
-  axios.get(`${config.api.host}/hp-characters`)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CharacterList/>
     </div>
   );
 }
