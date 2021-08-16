@@ -1,7 +1,9 @@
 FROM node:lts-alpine as base
 WORKDIR /var/www/html
 COPY ./api .
+COPY ./package.server.json ./package.json
 
 RUN npm install -g json-server
+RUN npm install
 EXPOSE 3004
 ENTRYPOINT ["node", "server.js"]
