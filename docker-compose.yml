@@ -1,0 +1,38 @@
+version: "3.7"
+networks:
+  internal:
+    driver: "bridge"
+  letsencrypt:
+    external:
+      name: letsencrypt
+
+services:
+  web:
+    build:
+      context: .
+      target: production
+    networks:
+      - internal
+      - letsencrypt
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/node_modules
+    restart: always
+    environment:
+      - VIRTUAL_HOST=${APP_HOST:-jsalazarv.test}
+      - LETSENCRYPT_HOST=${APP_HOST:-jsalazarv.test}
+      - LETSENCRYPT_EMAIL=${WEB_MASTER_EMAIL:-example@mail.com}
+  api:
+    build: Dockerfile.api
+    networks:
+      - internal
+      - letsencrypt
+    volumes:
+      - ./api:/var/www/html
+      - /var/www/html/node_modules
+    restart: always
+    environment:
+      - VIRTUAL_HOST=${APP_HOST:-api.jsalazarv.test}
+      - LETSENCRYPT_HOST=${APP_HOST:-api.jsalazarv.test}
+      - LETSENCRYPT_EMAIL=${WEB_MASTER_EMAIL:-example@mail.com}
+
