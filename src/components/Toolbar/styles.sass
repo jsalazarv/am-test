@@ -1,0 +1,48 @@
+.toolbar
+  position: fixed
+  bottom: 0
+  display: flex
+  justify-content: center
+  height: max-content
+  width: 100%
+  left: 0
+  &-button
+    background-color: #6B63B5
+    border: 1px solid #5A5581
+    color: #ffffff
+    height: 40px
+    width: 45%
+    &:first-child
+      border-top-left-radius: 12px
+    &:last-child
+      border-top-right-radius: 12px
+    .icon
+      margin-left: 6px
+
+
+//@media (min-width: 576px)
+//@media (min-width: 768px)
+@media (min-width: 992px)
+  .toolbar
+    top: 0
+    justify-content: flex-end
+    right: 30%
+    &-button
+      width: max-content
+      padding: 0 15px
+      &:first-child
+        border-top-left-radius: initial
+        border-bottom-left-radius: 12px
+      &:last-child
+        border-top-right-radius: initial
+        border-bottom-right-radius: 12px
+      &:hover
+        cursor: pointer
+        background-color: #5A5581
+
+@media (min-width: 1200px)
+  .toolbar
+    top: 0
+    justify-content: flex-end
+    right: 40%
+
