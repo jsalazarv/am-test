@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.sass';
 import CharacterList from "./components/CharacterList";
 
 function App() {
