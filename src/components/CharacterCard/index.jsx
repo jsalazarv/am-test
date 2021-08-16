@@ -10,7 +10,7 @@ const CharacterCard = (props) => {
     const {character, onFavoriteClick = () => null} = props;
     const dispatch = useDispatch();
     const favorites = useSelector((state) => state.characterState.favorites);
-    const aliveStatus = character.alive ? "VIVO" : "MUERTO";
+    const aliveStatus = character.alive ? "VIVO" : "FINADO";
     const category = character.hogwartsStaff ? "STAFF" : "ESTUDIANTE";
     const [favoriteIcon, setFavoriteIcon] = useState(faBookmark);
     const houseClassColor = {
@@ -39,8 +39,8 @@ const CharacterCard = (props) => {
             <div className={`character-card-header ${houseClassColor[character.house]}`}>
                 <img className="character-card-header-avatar" src={character.image} alt={character.name}/>
             </div>
-            <div className="character-card-body">
-                <h3 className="character-card-body-title">{character.name}</h3>
+            <div className={`character-card-body ${!character.alive && "bg-dead"}`}>
+                <h3 className="character-card-body-title">{!character.alive && "+"} {character.name}</h3>
                 <div className="character-card-body-info">
                     <p><strong>Cumpleaños: </strong>{character.dateOfBirth}</p>
                     <p><strong>Género: </strong>{character.gender}</p>
