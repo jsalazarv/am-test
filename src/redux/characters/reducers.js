@@ -1,12 +1,7 @@
 import {SET_CHARACTER_LIST, ADD_CHARACTER_TO_LIST} from "./actions";
 
 const initialState = {
-    list: [
-        {
-            id: 1,
-            name: "John"
-        }
-    ]
+    list: []
 }
 
 const characterReducer = (state = initialState, action) => {
