@@ -32,7 +32,7 @@ services:
       - /var/www/html/node_modules
     restart: always
     environment:
-      - VIRTUAL_HOST=${APP_HOST:-api.jsalazarv.test}
-      - LETSENCRYPT_HOST=${APP_HOST:-api.jsalazarv.test}
+      - VIRTUAL_HOST=${REACT_APP_API_HOST:-api.jsalazarv.test}
+      - LETSENCRYPT_HOST=${REACT_APP_API_HOST:-api.jsalazarv.test}
       - LETSENCRYPT_EMAIL=${WEB_MASTER_EMAIL:-example@mail.com}
 
