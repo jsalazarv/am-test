@@ -23,10 +23,14 @@ services:
       - LETSENCRYPT_HOST=${APP_HOST:-jsalazarv.test}
       - LETSENCRYPT_EMAIL=${WEB_MASTER_EMAIL:-example@mail.com}
   api:
-    build: Dockerfile.api
+    build:
+      context: .
+      dockerfile: ./Dockerfile.api
     networks:
       - internal
       - letsencrypt
+    ports:
+      - "80:3004"
     volumes:
       - ./api:/var/www/html
       - /var/www/html/node_modules
