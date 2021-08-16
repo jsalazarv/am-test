@@ -39,3 +39,24 @@ npm run start
 ```
 
 - Visitar http://localhost:3000 y api en http://localhost:3004/hp-characters
+
+###### Mis opiniones
+
+En general me parecio un proyecto muy divertido y entretenido, puedo decir que lo que más 
+me gustó fue la implementación de JSON SERVER, por el hecho de poder probar el front sin 
+la necesidad de tener un proyecto backend.
+
+Si hubiera tenido más tiempo para este desarrollo hubiese implementado otras funcionalidades como:
+- Un buscador de personajes
+- Paginación
+- Detalle completo de los personajes
+- Editar personajes
+- Borrar personajes
+- Animaciones UI/UX
+- Asignacion aleatoria de escuelas
+
+
+
+
+
+
