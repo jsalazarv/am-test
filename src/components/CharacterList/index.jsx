@@ -17,6 +17,7 @@ const CharacterList = () => {
 
     const filterStudents = () => setParams({hogwartsStudent: true});
     const filterStaff = () => setParams({hogwartsStaff: true});
+    const filterDeceased = () => setParams({alive: false});
 
     const {list} = useSelector(state => state.characterState);
     return (
@@ -35,6 +36,10 @@ const CharacterList = () => {
                     className={`filter-button ${params.hogwartsStaff && "active"}`}
                     onClick={filterStaff}>
                     STAFF
+                </button>
+                <button className={`filter-button ${params.hogwartsDeceased && "active"}`}
+                        onClick={filterDeceased}>
+                    FINADOS
                 </button>
             </div>
             <div className="container-character-list">
