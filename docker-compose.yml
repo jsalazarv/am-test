@@ -39,5 +39,5 @@ services:
     environment:
       - VIRTUAL_HOST=${APP_API_HOST:-api.jsalazarv.test}
       - LETSENCRYPT_HOST=${APP_API_HOST:-api.jsalazarv.test}
-      - API_PORT:80
+      - API_PORT=80
       - LETSENCRYPT_EMAIL=${WEB_MASTER_EMAIL:-example@mail.com}
