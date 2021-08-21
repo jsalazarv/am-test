@@ -1,3 +1,5 @@
+@import "../../theme/vars/colors"
+
 .toolbar
   position: fixed
   bottom: 0
@@ -7,9 +9,9 @@
   width: 100%
   left: 0
   &-button
-    background-color: #6B63B5
-    border: 1px solid #5A5581
-    color: #ffffff
+    background-color: $primary
+    border: 1px solid $primary
+    color: $white
     height: 40px
     width: 45%
     &:first-child
@@ -21,18 +23,18 @@
   .favorite-list
     position: absolute
     bottom: 0
-    background: #6B63B5
+    background: $primary
     width: 90%
     padding: 15px 0 25px 0
     z-index: -1
-    color: white
+    color: $white
     list-style: none
     display: none
     &.open
       display: block
     li
       padding: 15px 20px
-      border-bottom: 1px solid #5A5581
+      border-bottom: 1px solid $primary-dark
       display: flex
       align-items: center
       justify-content: space-between
@@ -65,7 +67,7 @@
         border-bottom-right-radius: 12px
       &:hover
         cursor: pointer
-        background-color: #5A5581
+        background-color: $primary-dark
     .favorite-list
       bottom: initial
       width: 244px
