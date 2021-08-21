@@ -122,7 +122,7 @@ const CharacterForm = ({onSave = () => {}}) => {
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="hairColour">COLOR DE OJOS</label>
+                <label htmlFor="hairColour">COLOR DE CABELLO</label>
                 <input
                     id="hairColour"
                     className={`text-input ${errors.hairColour && "error"}`}
@@ -183,7 +183,7 @@ const CharacterForm = ({onSave = () => {}}) => {
             </div>
             <div className="form-group">
                 <label htmlFor="image" className={`no-outline ${errors.image && "error"}`}>
-                    FOTOGRAFIA
+                    FOTOGRAFÍA
                     <input
                         id="image"
                         className="image-input"
